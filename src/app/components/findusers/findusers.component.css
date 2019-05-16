@@ -1,0 +1,20 @@
+
+.input-wrapper {
+    width: 100%;
+    position: relative;
+  }
+  
+  input {
+    color: #435f7a;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    outline: none;
+    width: auto;
+    min-width: 100%;
+    font-size: 1.5rem;
+    line-height: 3em;
+    font-family: Roboto, Arial, sans-serif;
+    border-bottom: 3px solid #435f7a;
+    background-color: transparent;
+  }

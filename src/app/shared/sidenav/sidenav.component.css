@@ -1,0 +1,132 @@
+
+.sidebar {
+	width: 320px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background: #2d353c;
+	z-index: 1010;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.sidebar .nav {
+/*display:block ;
+*/	}
+.sidebar .nav > li {
+	position: relative;
+}
+
+.sidebar .nav > li.nav-header a i {
+	float: none;
+	margin: 0;
+}
+.sidebar .nav > li.nav-profile {
+	width: 100%;
+	padding: 20px;
+	color: #fff;
+	background: #1a2229;
+	overflow: hidden;
+}
+.sidebar .nav > li.nav-profile a {
+	padding: 0;
+}
+
+.sidebar .nav > li.nav-profile > a {
+	margin: -20px;
+	padding: 20px;
+	display: block;
+	color: #fff;
+}
+.sidebar .nav > li.nav-profile .image {
+	width: 34px;
+	height: 34px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	border-radius: 50%;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.sidebar .nav > li.nav-profile .image img {
+	max-width: 100%;
+	max-height: 100%;
+}
+.sidebar .nav > li.nav-profile .image.image-icon i {
+	float: none;
+	line-height: 48px;
+	font-size: 24px;
+	text-align: center;
+	display: block;
+	width: auto;
+	margin: 0;
+}
+.sidebar .nav > li.nav-profile .info {
+	font-size: 14px;
+	position: relative;
+}
+.sidebar .nav > li.nav-profile .info .caret {
+	margin-top: 2px;
+}
+.sidebar .nav > li.nav-profile .info small {
+	display: block;
+	color: rgba(255,255,255,0.75);
+	font-size: 12px;
+	margin-bottom: -5px;
+}
+
+.sidebar .nav > li.nav-profile .cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url('https://homepages.cae.wisc.edu/~ece533/images/girl.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.sidebar .nav > li.nav-profile .cover.with-shadow:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	transition: all .2s linear;
+	background: rgba(26, 34, 41, 0.75);
+}
+.sidebar .nav > li.nav-profile a:hover .cover.with-shadow:before,
+.sidebar .nav > li.nav-profile a:focus .cover.with-shadow:before {
+	opacity: 0.75;
+}
+.list{
+	position: absolute;
+	width: 100%;
+	height:100vh;
+    margin-bottom: 10px;
+    overflow:auto;
+  
+}
+
+.fa-sign-out-alt{
+	cursor: pointer;
+}
+
+.nav-chats{
+	width: 100%;
+	background: #283541;
+	border-bottom: 1px solid #3b4957;
+	cursor: pointer;
+	transition: 0.3s;
+}
+.nav-chats:hover{
+	background: #3b4957;
+}
+
+.content{
+    margin-left: 320px;
+    height: 100%;
+}

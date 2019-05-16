@@ -1,0 +1,26 @@
+
+<div class="chat-content"  *ngIf="idChat!=null">
+
+		<app-loading *ngIf="loading"></app-loading>
+
+    <div class="messages"  #chatelement>
+
+			<ul>
+		<li *ngFor="let mensaje of mensajesArray">
+      <app-mensaje [mensaje] = mensaje></app-mensaje>
+    </li>
+			
+			</ul>
+		</div>
+		<div class="message-input">
+			<form  [formGroup]="form" (ngSubmit)="sendMessage()" class="wrap">
+			<input formControlName="message" name="message" type="text" placeholder="Escribe.." />
+			<button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+			</form>
+		</div>
+  
+</div>
+
+<div *ngIf="idChat==null" class="chat-content text-center welcome-div">
+  <h1> Bienvenido</h1>
+</div>

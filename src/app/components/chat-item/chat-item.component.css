@@ -1,0 +1,29 @@
+.clearfix {
+    display: block;
+	padding-left: 15px;
+	padding-top: 15px;
+}
+
+.clearfix > img{
+    float: left;
+	margin-bottom: 10px;
+	overflow: hidden;
+	border-radius: 50%;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.about {
+    padding: 7px 20px;
+	line-height: 20px;
+	color: #a8acb1;
+	display: block;
+	text-decoration: none;
+    float: left;
+ 
+  }
+
+
+
+  

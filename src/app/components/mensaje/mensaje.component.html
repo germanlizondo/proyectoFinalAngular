@@ -1,0 +1,7 @@
+
+
+<li [ngClass]="{'replies': isMine, 'sent': !isMine}">
+    <p class="hour">{{mensaje.date | date: 'shortTime'}}</p>
+  <p class="content"> {{mensaje.content}}</p>
+
+</li>

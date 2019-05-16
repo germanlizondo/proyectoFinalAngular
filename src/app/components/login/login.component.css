@@ -1,0 +1,14 @@
+.div-login{
+margin-top: 50%;
+}
+.column-imagen{
+
+    background-image: url(https://images.wallpaperscraft.com/image/star_nebula_glow_94217_1400x1050.jpg);
+    background-size: cover;
+background-repeat: no-repeat;
+background-position: center
+}
+
+.column-login{
+    background-color: white;
+}

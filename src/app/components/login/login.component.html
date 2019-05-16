@@ -1,0 +1,31 @@
+<div class="animated fadeIn container-fluid h-100">
+<div class="row h-100">
+  <div class="col-lg-10 column-imagen">
+    
+  </div>
+  <div class="col-lg-2 column-login">
+    <div class="container div-login ">
+    <form ngNativeValidate [formGroup]="form" (ngSubmit)="loginUser()" class="margin-bottom-0">
+      <div class="form-group m-b-15">
+        <input formControlName="nickname" name="nickname" type="text" class="form-control form-control-lg" placeholder="Nickname" required />
+      </div>
+      <div class="form-group m-b-15">
+        <input formControlName="password" name="password" type="password" class="form-control form-control-lg" placeholder="Password" required />
+      </div>
+      <div class="checkbox checkbox-css m-b-30">
+        <input  type="checkbox" id="remember_me_checkbox" value="" />
+        <label for="remember_me_checkbox">
+        Remember Me
+        </label>
+      </div>
+      <div class="login-buttons">
+        <button type="submit" class="btn btn-success btn-block btn-lg">Sign me in</button>
+      </div>
+      <div class="m-t-20 m-b-40 p-b-40 text-inverse">
+         <a [routerLink]="[ '/registrer']"class="text-success">Registrate</a>
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+</div>
