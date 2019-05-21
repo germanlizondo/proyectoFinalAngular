@@ -1,0 +1,15 @@
+.selecciona{
+    cursor: pointer;
+}
+
+.image-selected{
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: aqua;
+}
+
+.card-columns{
+    height: 60vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}

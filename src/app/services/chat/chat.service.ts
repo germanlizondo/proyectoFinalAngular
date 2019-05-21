@@ -11,6 +11,7 @@ export class ChatService {
    }
 
    getAllChats(id:string){
+  
     let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
     let url = SERVICE + 'get-chat/'+id;
 

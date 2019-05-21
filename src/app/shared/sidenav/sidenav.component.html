@@ -6,8 +6,8 @@
           <ul class="nav">
               <li class="nav-profile">
                   <div class="cover with-shadow"></div>
-                  <div class="image">
-                    <img src="assets/images/profile.png" alt="" />
+                  <div class="image" [routerLink]="[ '/user' ]">
+                    <img [src]="_userService.user.img" alt="" />
                   </div>
                   <div class="info">
                     <b class="caret pull-right"></b>
@@ -21,7 +21,7 @@
 
               <li class="nav-chats" *ngFor="let chat of chats">
               
-                <app-chat-item (chatSelected)="getIdChatSelected($event)"  (nicknameNavbar)="nameNavbar($event)" [user]=chat.users[0] [idChat]=chat.id></app-chat-item>
+                <app-chat-item (chatSelected)="getIdChatSelected($event)"  (contacto)="getContact($event)" [user]=chat.users[0] [idChat]=chat.id></app-chat-item>
                 
               </li>
               
@@ -34,5 +34,14 @@
 
 <div class="content">
     <app-navbar [nickname] = nickanameNavbar></app-navbar>
-    <app-chat [idChat]=chatIdSelected></app-chat>
+    <div class="row">
+      <div class="col-lg-8">
+        <app-chat [idChat]=chatIdSelected></app-chat>
+
+      </div>
+      <div class="col-lg-4">
+      <app-geolocalitzacio [idUser]=contacto></app-geolocalitzacio>
+
+      </div>
+    </div>
 </div>

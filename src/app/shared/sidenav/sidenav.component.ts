@@ -3,6 +3,7 @@ import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user.model';
 import { Chat } from 'src/app/models/chat.model';
 import { ChatService } from 'src/app/services/chat/chat.service';
+import { SERVICE } from 'src/app/config/config';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,9 +13,11 @@ import { ChatService } from 'src/app/services/chat/chat.service';
 export class SidenavComponent implements OnInit {
 
   user: User;
+  contacto: User = new User();
   chats: Chat[] = [];
   chatIdSelected : string;
   nickanameNavbar: string  = 'Selecciona Chat';
+
 
   constructor(public _userService: UserService,public _chatService: ChatService) {
     this.user = _userService.user;
@@ -25,8 +28,9 @@ export class SidenavComponent implements OnInit {
      });
    }
 
-   nameNavbar(event: string){
-     this.nickanameNavbar = event;
+   getContact(event: User){
+     this.contacto = event;
+     this.nickanameNavbar = this.contacto.nickname
    }
    
    getIdChatSelected(event:string){
@@ -52,6 +56,12 @@ export class SidenavComponent implements OnInit {
             user.id = users[x]._id;
             user.nickname = users[x].nickname;
             user.email = users[x].email;
+            if(users[x].img===undefined){
+              user.img = 'assets/images/profile.png';
+            }else{
+              user.img = SERVICE+'images/'+ users[x].img;
+
+            }
             chat.addUser(user);
           }
         

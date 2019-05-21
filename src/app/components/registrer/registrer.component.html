@@ -5,18 +5,18 @@
       </div>
       <div class="col-lg-2 column-login">
         <div class="container div-login ">
-        <form action="index.html" method="GET" class="margin-bottom-0">
+        <form ngNativeValidate [formGroup]="form" (ngSubmit)="signupUser()"  class="margin-bottom-0">
           <div class="form-group m-b-15">
-            <input type="text" class="form-control form-control-lg" placeholder="Nickname" required />
+            <input formControlName="nickname" type="text" class="form-control form-control-lg" placeholder="Nickname" required />
           </div>
           <div class="form-group m-b-15">
-              <input type="text" class="form-control form-control-lg" placeholder="Email" required />
+              <input formControlName="email" type="text" class="form-control form-control-lg" placeholder="Email" required />
             </div>
           <div class="form-group m-b-15">
-            <input type="password" class="form-control form-control-lg" placeholder="Password" required />
+            <input formControlName="password" type="password" class="form-control form-control-lg" placeholder="Password" required />
           </div>
           <div class="form-group m-b-15">
-              <input type="password" class="form-control form-control-lg" placeholder="Repeat Password" required />
+              <input formControlName="password2" type="password" class="form-control form-control-lg" placeholder="Repeat Password" required />
             </div>
           <div class="checkbox checkbox-css m-b-30">
             <input type="checkbox" id="remember_me_checkbox" value="" />

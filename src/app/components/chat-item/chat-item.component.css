@@ -13,6 +13,8 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	height:50px;
+	width: 50px;
 }
 .about {
     padding: 7px 20px;

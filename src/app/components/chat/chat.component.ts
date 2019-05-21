@@ -6,6 +6,7 @@ import { SocketService } from 'src/app/services/socket/socket-service.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { stringify } from '@angular/core/src/render3/util';
+import { RsaService } from 'src/app/services/rsa.service';
 
 @Component({
   selector: 'app-chat',
@@ -26,14 +27,18 @@ export class ChatComponent implements OnInit {
   constructor(
     public _userService: UserService,
     public _chatService: ChatService,
-    public _socketService: SocketService) { 
+    public _socketService: SocketService,
+  ) { 
+    
+     
       this.loading = false;
+
     }
 
     scrollToBottom(): void {
       try {
       
-          this.chatElement.nativeElement.scrollTop = this.chatElement.nativeElement.scrollHeight;
+     //     this.chatElement.nativeElement.scrollTop = this.chatElement.nativeElement.scrollHeight;
       } catch(err) { 
         console.log(err)
       }                 
@@ -107,6 +112,7 @@ export class ChatComponent implements OnInit {
    mensaje.content = data.content;
    mensaje.date = data.date;
     author.nickname = data.author.nickname;
+    author.id = data.author.id;
     mensaje.author = author;
     this.mensajesArray.push(mensaje);
     this.scrollToBottom();

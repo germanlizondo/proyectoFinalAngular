@@ -1,0 +1,12 @@
+
+
+
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]=10 *ngIf="chatSeleccionado">
+  <agm-marker [latitude]="lat" [longitude]="lng">
+    <agm-info-window>
+      <strong>{{title | uppercase}}</strong>
+      <p>{{lat}}</p>
+      <p>{{lng}}</p>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

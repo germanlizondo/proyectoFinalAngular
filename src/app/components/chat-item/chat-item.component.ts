@@ -12,7 +12,7 @@ export class ChatItemComponent implements OnInit {
   @Input() user:User;
   @Input() idChat:string;
 
-  @Output() nicknameNavbar: EventEmitter<string> = new EventEmitter();
+  @Output() contacto: EventEmitter<User> = new EventEmitter();
   @Output() chatSelected: EventEmitter<string> = new EventEmitter();
   constructor() { }
 
@@ -21,7 +21,8 @@ export class ChatItemComponent implements OnInit {
 
   selectChat(){
       this.chatSelected.emit(this.idChat);
-      this.nicknameNavbar.emit(this.user.nickname);
+      this.contacto.emit(this.user);
+      
  }
 
 }

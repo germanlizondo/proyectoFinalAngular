@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { UserService } from "../../services/user.service";
 import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
+import { SERVICE } from 'src/app/config/config';
 
 
 @Component({
@@ -39,12 +40,20 @@ export class LoginComponent implements OnInit {
    
     this._userService.loginUser(user)
     .subscribe((resp : any) =>{
-      
-      localStorage.setItem('id',resp._id);
-      localStorage.setItem('nickname',resp.nickname);
-      localStorage.setItem('email',resp.email);
+      console.log(resp.error)
+      if(resp.error==undefined){
+        localStorage.setItem('id',resp._id);
+        localStorage.setItem('nickname',resp.nickname);
+        localStorage.setItem('email',resp.email);
+        if(resp.img !=undefined){
+          localStorage.setItem('img',SERVICE+'images/'+ resp.img);
+        }
 
-       window.location.href='/';
+         window.location.href='/';
+      }else{
+        console.log("LOGIN FAIL")
+      }
+    
        
     })
 

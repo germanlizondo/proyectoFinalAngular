@@ -24,7 +24,14 @@ import { SERVICE } from './config/config';
 import { LoadingComponent } from './components/loading/loading.component';
 import { FindusersComponent } from './components/findusers/findusers.component';
 import { ProfileuserComponent } from './components/profileuser/profileuser.component';
+import { EdituserComponent } from './components/edituser/edituser.component';
+import { GeolocalitzacioComponent } from './components/geolocalitzacio/geolocalitzacio.component';
 
+//maps 
+import { AgmCoreModule } from '@agm/core';
+
+import { FileSelectDirective } from 'ng2-file-upload';
+import { ModalimagesComponent } from './components/modalimages/modalimages.component';
 const config: SocketIoConfig = { url: SERVICE, options: {} };
 
 
@@ -42,7 +49,11 @@ const config: SocketIoConfig = { url: SERVICE, options: {} };
     MensajeComponent,
     LoadingComponent,
     FindusersComponent,
-    ProfileuserComponent
+    ProfileuserComponent,
+    EdituserComponent,
+    GeolocalitzacioComponent,
+    FileSelectDirective,
+    ModalimagesComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +61,10 @@ const config: SocketIoConfig = { url: SERVICE, options: {} };
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAKaNEmH5WoRzNdhCF1pEVm61JaCg-flFU'
+    })
   ],
   providers: [
     UserService,

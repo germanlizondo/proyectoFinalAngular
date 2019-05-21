@@ -1,0 +1,27 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Selecciona Imatge</h5>
+       
+            <button data-dismiss="exampleModalLabel"  (click)="cambiaImatge()"  type="button"  class="btn btn-primary">Cambia Imatge</button>
+        
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="card-columns">
+            <div class="card selecciona"  *ngFor="let image of images" (click)="seleccionaImg(image)" [ngClass]="{'image-selected': image.selected}">
+              <img class="card-img-top" [src]=image.url alt="Card image cap">
+              
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+          <input  type="file" ng2FileSelect [uploader]="uploader">
+        <button (click)="uploader.uploadAll()" type="button" [disabled]="!uploader.getNotUploadedItems().length"  class="btn btn-primary">Puja Imatge</button>
+      </div>
+    </div>
+  </div>
+</div>

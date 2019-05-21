@@ -17,6 +17,11 @@ export class SocketService {
     this.socket.emit('leave-room',id);
   }
 
+  joinGeolocation(id:string){
+    
+    this.socket.emit('join-geolocation',id+'-geo');
+  }
+
   emitMessage(data: any){
     this.socket.emit('new-mensaje',data);
   }
@@ -27,5 +32,13 @@ export class SocketService {
             observer.next(message);
         });
     });
+}
+
+public getGeolocation = () => {
+  return Observable.create((observer) => {
+      this.socket.on('geolocation-send', (message) => {
+          observer.next(message);
+      });
+  });
 }
 }
